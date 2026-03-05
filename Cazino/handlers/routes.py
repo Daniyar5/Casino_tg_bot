@@ -6,7 +6,8 @@ from aiogram.types import (
     ReplyKeyboardMarkup,
     KeyboardButton,
     InlineKeyboardMarkup,
-    InlineKeyboardButton
+    InlineKeyboardButton,
+    FSInputFile
                            )
 from forms.user import Form
 from aiogram.fsm.context import FSMContext
@@ -45,8 +46,8 @@ async def proccess_more_info(callback: CallbackQuery):
 
 @router.message(Command("start"))
 @router.message(F.text.lower() == 'старт')
-async def start(massege: Message, state: FSMContext):
-    await massege.answer('Бедолага, с начало надо зарегатся.\nДля начало пиши своё имя:')
+async def start(message: Message, state: FSMContext):
+    await message.answer('Бедолага, с начало надо зарегатся.\nДля начало пиши своё имя:')
     await state.set_state(Form.name)
 
 
@@ -102,24 +103,27 @@ async def proccess_email(message: Message, state: FSMContext):
 
 
 
-
+@router.message(Command('dep'))
+async def dep(message: Message):
+    video = FSInputFile("videos/luck-777.mp4")
+    await message.answer_video(video)
 
 
 
 @router.message(Command('help'))
 @router.message(F.text.lower() == 'помощь')
-async def help(massege: Message):
-    await massege.answer('Команды:\n/start - запустить бота\n/help - список команд\n/about - про нас')
+async def help(message: Message):
+    await message.answer('Команды:\n/start - запустить бота\n/help - список команд\n/about - про нас')
 
 @router.message(Command('about'))
-async def about(massege: Message):
-    await massege.answer(
-        f'Это ультра мега казик для <a href="https://img.itch.zone/aW1nLzE0NDgyNTc5LmpwZw==/original/h6BwgP.jpg">настоящих мужиков</a>.\nЯ знаю кто ты: {massege.from_user.first_name}',
+async def about(message: Message):
+    await message.answer(
+        f'Это ультра мега казик для <a href="https://img.itch.zone/aW1nLzE0NDgyNTc5LmpwZw==/original/h6BwgP.jpg">настоящих мужиков</a>.',
         parse_mode='HTML',
         reply_markup=get_main_inline_keyboard()
         )
         
     
 @router.message()
-async def чё(massege: Message):
-    await massege.answer('Чё?')
+async def чё(message: Message):
+    await message.answer('Чё?')
