@@ -14,7 +14,7 @@ async def process_more_info(callback: CallbackQuery):
 @router.message(Command('help'))
 @router.message(F.text.lower() == 'помощь')
 async def help_command(message: Message):
-    await message.answer('Команды:\n/start - запустить бота\n/dep - пополнить счет\n/balance - проверить баланс\n/history - история\n/help - список команд\n/about - про нас')
+    await message.answer('Команды:\n/start - запустить бота\n/dep - пополнить счет\n/balance - проверить баланс\n/play - играть в рулетку\n/history - история\n/help - список команд\n/about - про нас')
 
 @router.message(Command('about'))
 async def about(message: Message):

@@ -7,6 +7,7 @@ def get_main_reply_keyboard():
         keyboard=[
             [KeyboardButton(text='Старт')],
             [KeyboardButton(text='Депозит'), KeyboardButton(text='Баланс'), KeyboardButton(text='История')],
+            [KeyboardButton(text='Играть')],   # новая кнопка
             [KeyboardButton(text='Помощь')]
         ],
         resize_keyboard=True

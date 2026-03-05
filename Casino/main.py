@@ -11,6 +11,7 @@ from handlers.registration import router as registration_router
 from handlers.deposit import router as deposit_router
 from handlers.balance import router as balance_router
 from handlers.history import router as history_router
+from handlers.game import router as game_router
 
 load_dotenv()
 TOKEN = getenv('BOT_TOKEN')
@@ -21,6 +22,7 @@ dp.include_router(registration_router)
 dp.include_router(deposit_router)
 dp.include_router(balance_router)
 dp.include_router(history_router)
+dp.include_router(game_router)
 dp.include_router(common_router)  
 
 async def main():
