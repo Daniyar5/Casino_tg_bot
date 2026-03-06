@@ -13,7 +13,7 @@ router = Router()
 @router.message(F.text.lower() == 'отмена')
 async def cancel_form(message: Message, state: FSMContext):
     await state.clear()
-    await message.answer('Отмена сделана!', reply_markup=get_main_reply_keyboard())
+    await message.answer('❌Отмена сделана!❌', reply_markup=get_main_reply_keyboard())
 
 @router.message(Command('dep'))
 @router.message(F.text.lower() == 'депозит')
@@ -102,5 +102,5 @@ async def process_amount(message: Message, state: FSMContext):
     await message.answer(f'Счет пополнен на {amount}. Новый баланс: {new_balance}', reply_markup=get_main_reply_keyboard())
     await state.clear()
 
-    video = FSInputFile("videos/luck-777.mp4")
+    video = FSInputFile("videos/money.mp4")
     await message.answer_video(video)

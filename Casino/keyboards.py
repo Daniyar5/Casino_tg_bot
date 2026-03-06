@@ -7,7 +7,7 @@ def get_main_reply_keyboard():
         keyboard=[
             [KeyboardButton(text='Старт')],
             [KeyboardButton(text='Депозит'), KeyboardButton(text='Баланс'), KeyboardButton(text='История')],
-            [KeyboardButton(text='Играть')],   # новая кнопка
+            [KeyboardButton(text='Играть')], 
             [KeyboardButton(text='Помощь')]
         ],
         resize_keyboard=True
@@ -27,4 +27,3 @@ def get_main_inline_keyboard():
         ]
     )
 
-# Для удаления клавиатуры (используем напрямую ReplyKeyboardRemove() где нужно)
