@@ -2,7 +2,6 @@ from aiogram import Router, F
 from aiogram.filters import Command
 from aiogram.types import Message, ReplyKeyboardRemove
 from aiogram.fsm.context import FSMContext
-
 from forms.user import UserForm
 from database import get_db_connection
 from keyboards import get_main_reply_keyboard

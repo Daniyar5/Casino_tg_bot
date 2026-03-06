@@ -22,7 +22,7 @@ def get_cancel_keyboard():
 def get_main_inline_keyboard():
     return InlineKeyboardMarkup(
         inline_keyboard=[
-            [InlineKeyboardButton(text='Открыть сайт', url='https://google.com')],
+            [InlineKeyboardButton(text='Открыть сайт', url='https://ru.wikipedia.org/wiki/%D0%93%D0%B0%D1%87%D0%B8%D0%BC%D1%83%D1%87%D0%B8')],
             [InlineKeyboardButton(text='Подробнее', callback_data='info_more')]
         ]
     )
